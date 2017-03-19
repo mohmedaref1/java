@@ -37,7 +37,7 @@ window.selectnav = (function(){
       autoselect = typeof(o.autoselect) === "boolean" ? o.autoselect : true,
       nested = typeof(o.nested) === "boolean" ? o.nested : true,
       indent = o.indent || "→",
-      label = o.label || "- Navigation -",
+      label = o.label || "اختر قسم",
 
       // helper variables
       level = 0,
