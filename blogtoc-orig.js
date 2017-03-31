@@ -1,4 +1,4 @@
-﻿   var postTitle = new Array();     // array of posttitles
+   var postTitle = new Array();     // array of posttitles
    var postUrl = new Array();       // array of posturls
    var postDate = new Array();      // array of post publish dates
    var postSum = new Array();       // array of post summaries
@@ -73,7 +73,7 @@ function loadtoc(json) {
             var pll = '';
             if ("category" in entry) {
                for (var k = 0; k < entry.category.length; k++) {
-                  pll += '<a href="javascript:filterPosts(\'' + entry.category[k].term + '\');" title="Click here to select all posts with label \'' + entry.category[k].term + '\'">' + entry.category[k].term + '</a>,  ';
+                  pll += '<a href="javascript:filterPosts(\'' + entry.category[k].term + '\');" title="انقر هنا لتحديد جميع المشاركات ذات التصنيف \'' + entry.category[k].term + '\'">' + entry.category[k].term + '</a>,  ';
                }
             var l = pll.lastIndexOf(',');
             if (l != -1) { pll = pll.substring(0,l); }
@@ -163,29 +163,29 @@ function displayToc(filter) {
    var numDisplayed = 0;
    var tocTable = '';
    var tocHead1 = 'عنوان الموضوع';
-   var tocTool1 = 'Click to sort by title';
+   var tocTool1 = 'انقر للترتيب حسب العنوان';
    var tocHead2 = 'التاريخ';
-   var tocTool2 = 'Click to sort by date';
+   var tocTool2 = 'انقر للترتيب حسب التاريخ';
    var tocHead3 = 'الأقسام';
-   var tocTool3 = '';
+   var tocTool3 = 'انقر للترتيب حسب القسم';
    if (sortBy == "titleasc") { 
-      tocTool1 += ' (descending)';
-      tocTool2 += ' (newest first)';
+      tocTool1 += ' (تنازلي)';
+      tocTool2 += ' (الأحدث أولا)';
    }
    if (sortBy == "titledesc") { 
-      tocTool1 += ' (ascending)';
-      tocTool2 += ' (newest first)';
+      tocTool1 += ' (تصاعدي)';
+      tocTool2 += ' (الأحدث أولا)';
    }
    if (sortBy == "dateoldest") { 
-      tocTool1 += ' (ascending)';
-      tocTool2 += ' (newest first)';
+      tocTool1 += ' (تصاعدي)';
+      tocTool2 += ' (الأحدث أولا)';
    }
    if (sortBy == "datenewest") { 
-      tocTool1 += ' (ascending)';
-      tocTool2 += ' (oldest first)';
+      tocTool1 += ' (تصاعدي)';
+      tocTool2 += ' (الأقدم أولا)';
    }
    if (postFilter != '') {
-      tocTool3 = 'Click to show all posts';
+      tocTool3 = 'انقر لعرض كل المشاركات';
    }
    tocTable += '<table>';
    tocTable += '<tr>';
