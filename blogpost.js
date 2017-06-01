@@ -163,40 +163,10 @@ function displayToc(filter) {
    var numDisplayed = 0;
    var tocTable = '';
    var tocHead1 = 'عنوان الموضوع';
-   var tocTool1 = 'انقر للترتيب حسب العنوان';
-   var tocHead2 = 'التاريخ';
-   var tocTool2 = 'انقر للترتيب حسب التاريخ';
-   var tocHead3 = 'الأقسام';
-   var tocTool3 = 'انقر للترتيب حسب القسم';
-   if (sortBy == "titleasc") { 
-      tocTool1 += ' (تنازلي)';
-      tocTool2 += ' (الأحدث أولا)';
-   }
-   if (sortBy == "titledesc") { 
-      tocTool1 += ' (تصاعدي)';
-      tocTool2 += ' (الأحدث أولا)';
-   }
-   if (sortBy == "dateoldest") { 
-      tocTool1 += ' (تصاعدي)';
-      tocTool2 += ' (الأحدث أولا)';
-   }
-   if (sortBy == "datenewest") { 
-      tocTool1 += ' (تصاعدي)';
-      tocTool2 += ' (الأقدم أولا)';
-   }
-   if (postFilter != '') {
-      tocTool3 = 'انقر لعرض كل المشاركات';
-   }
    tocTable += '<table>';
    tocTable += '<tr>';
    tocTable += '<td class="toc-header-col1">';
    tocTable += '<a href="javascript:toggleTitleSort();" title="' + tocTool1 + '">' + tocHead1 + '</a>';
-   tocTable += '</td>';
-   tocTable += '<td class="toc-header-col2">';
-   tocTable += '<a href="javascript:toggleDateSort();" title="' + tocTool2 + '">' + tocHead2 + '</a>';
-   tocTable += '</td>';
-   tocTable += '<td class="toc-header-col3">';
-   tocTable += '<a href="javascript:allPosts();" title="' + tocTool3 + '">' + tocHead3 + '</a>';
    tocTable += '</td>';
    tocTable += '</tr>';
    for (var i = 0; i < postTitle.length; i++) {
@@ -212,14 +182,6 @@ function displayToc(filter) {
         }
    }
    tocTable += '</table>';
-   if (numDisplayed == postTitle.length) {
-      var tocNote = '<span class="toc-note"> عدد الموضوعات ' + postTitle.length + ' موضوع<br/></span>'; }
-   else {
-      var tocNote = '<span class="toc-note">عدد الموضوعات ' + numDisplayed + ' الخاصة بقسم \'';
-      tocNote += postFilter + '\' *** '+ postTitle.length + ' العدد الكلى للموضوعات<br/></span>';
-   }
-   tocdiv.innerHTML = tocNote + tocTable;
-} // end of displayToc
 
 function toggleTitleSort() {
    if (sortBy == "titleasc") { sortBy = "titledesc"; }
